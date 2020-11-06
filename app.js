@@ -16,29 +16,7 @@ const render = require("./lib/htmlRenderer");
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
-inquirer.prompt([
-    {
-        type: "input",
-        name: "name",
-        message: "Enter your name"
-    },
-    {
-        type: "number",
-        name: "id",
-        message: "Enter your ID number",
-    },
-    {
-        type: "input",
-        name: "email",
-        message: "Enter your email",
-    },
-    {
-        type: "number",
-        name: "officeNumber",
-        message: "Enter your office number",
-    }
-]).then(manager => {
-
+function addEmployee() {
     inquirer.prompt([
         {
             type: 'list',
@@ -76,9 +54,11 @@ inquirer.prompt([
                         message: "Do you need to add another employee?",
                     }
                 ]).then(engineer => {
-                    // if (engineer.addAnother = true){
-
-                    // }
+                    if (engineer.addAnother === true) {
+                        addEmployee();
+                    } else {
+                        return
+                    }
                 })
                 break;
             case "Intern":
@@ -109,15 +89,43 @@ inquirer.prompt([
                         message: "Do you need to add another employee?",
                     }
                 ]).then(intern => {
-                    //  if (intern.addAnother = true){
-
-                    // }
+                    if (intern.addAnother === true) {
+                        addEmployee();
+                    }
+                    else {
+                        return;
+                    }
                 })
                 break;
             default:
                 break;
         }
     })
+}
+
+inquirer.prompt([
+    {
+        type: "input",
+        name: "name",
+        message: "Enter your name"
+    },
+    {
+        type: "number",
+        name: "id",
+        message: "Enter your ID number",
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "Enter your email",
+    },
+    {
+        type: "number",
+        name: "officeNumber",
+        message: "Enter your office number",
+    }
+]).then(manager => {
+    addEmployee();
 
 })
 
