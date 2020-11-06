@@ -34,11 +34,90 @@ inquirer.prompt([
     },
     {
         type: "number",
-        name: "office",
+        name: "officeNumber",
         message: "Enter your office number",
     }
 ]).then(manager => {
-    console.log(manager);
+
+    inquirer.prompt([
+        {
+            type: 'list',
+            name: 'role',
+            message: 'What kind of employee would you like to add next?',
+            choices: ["Engineer", "Intern"],
+        },
+    ]).then(choice => {
+        switch (choice.role) {
+            case "Engineer":
+                inquirer.prompt([
+                    {
+                        type: "input",
+                        name: "name",
+                        message: "Enter engineer's name"
+                    },
+                    {
+                        type: "number",
+                        name: "id",
+                        message: "Enter engineer's ID number",
+                    },
+                    {
+                        type: "input",
+                        name: "email",
+                        message: "Enter engineer's email",
+                    },
+                    {
+                        type: "input",
+                        name: "github",
+                        message: "Enter engineer's GitHub username",
+                    },
+                    {
+                        type: "confirm",
+                        name: "addAnother",
+                        message: "Do you need to add another employee?",
+                    }
+                ]).then(engineer => {
+                    // if (engineer.addAnother = true){
+
+                    // }
+                })
+                break;
+            case "Intern":
+                inquirer.prompt([
+                    {
+                        type: "input",
+                        name: "name",
+                        message: "Enter intern's name"
+                    },
+                    {
+                        type: "number",
+                        name: "id",
+                        message: "Enter intern's ID number",
+                    },
+                    {
+                        type: "input",
+                        name: "email",
+                        message: "Enter intern's email",
+                    },
+                    {
+                        type: "input",
+                        name: "school",
+                        message: "Enter intern's school name",
+                    },
+                    {
+                        type: "confirm",
+                        name: "addAnother",
+                        message: "Do you need to add another employee?",
+                    }
+                ]).then(intern => {
+                    //  if (intern.addAnother = true){
+
+                    // }
+                })
+                break;
+            default:
+                break;
+        }
+    })
 
 })
 
