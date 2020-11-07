@@ -23,7 +23,7 @@
 
 ## About the Project
 
-This is a CLI app for managers to input employee data, to be rendered into a HTML file that the manager can use to quickly see employee contact information. The constructor functions for the various employee roles have passed a battery of tests to ensure they are functional for building any number of team members reliably.
+This is a CLI app for managers to input employee data, to be rendered into a HTML file that the manager can use to quickly see employee contact information. The constructor functions for the various employee roles have passed a battery of tests to ensure they are functional for building any number of team members reliably. The team.html file will be written to the output directory, which will be created when running the app.
 
 ## Usage
 
