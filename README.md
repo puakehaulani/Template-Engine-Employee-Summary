@@ -27,7 +27,9 @@ This is a CLI app for managers to input employee data, to be rendered into a HTM
 
 ## Usage
 
-Managers can use this CLI app to answer prompts about employee information. This information will then be displayed as a HTML page that they can reference to see team members and their contact info at a glance.
+Run the following command in your terminal
+
+    node app.js
 
 ## Getting Started
 
